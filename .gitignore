@@ -1,0 +1,46 @@
+# --- Secrets: never commit ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# --- uv / virtual environments ---
+.venv/
+# uv.lock stays committed (reproducible builds)
+
+# --- Tests and tooling caches ---
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# --- Lab run output (generated on every run) ---
+# Traces, eval results and cost reports are regenerated.
+# Copy individual runs into docs/examples/ if you want to show them.
+runs/
+traces/
+eval-results/
+*.jsonl
+!corpus/**/*.jsonl
+!docs/examples/**/*.jsonl
+
+# --- Local agent and tool settings ---
+.claude/settings.local.json
+.mcp.local.json
+
+# --- Editors and OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
